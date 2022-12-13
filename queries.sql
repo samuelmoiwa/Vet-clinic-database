@@ -14,10 +14,17 @@ BEGIN;
 UPDATE animals SET species = 'unspecified';
 ROLLBACK;
 
+SELECT species from animals; 
+COMMIT;
+
 BEGIN;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 COMMIT;
+
+SELECT species from animals; 
+COMMIT;
+SELECT species FROM animals;
 
 BEGIN;
 DELETE FROM animals;
